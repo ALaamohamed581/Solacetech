@@ -4,7 +4,10 @@ interface Property {
   name: string;
   value: string;
 }
-
+interface CardProps {
+  title: string;
+  children: React.ReactNode;
+}
 const Row = ({ properties }: { properties: Property[] }) => (
   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-10 text-center sm:text-[12px] md:text-start">
     {properties.map((prop: Property, index: number) => (
@@ -16,7 +19,7 @@ const Row = ({ properties }: { properties: Property[] }) => (
   </div>
 );
 
-const DetailsCard = ({ title, children }: any) => {
+const DetailsCard = ({ title, children }: CardProps) => {
   return (
     <div className="md:flex-col shadow-[#EEEEEE80] shadow-md p-12 rounded-3xl w-full min-h-[196px] max-h-fit text-wrap">
       <div className="min-w-[250px]">
@@ -40,7 +43,7 @@ const DetailsCard = ({ title, children }: any) => {
   );
 };
 
-// Attach the Row component as a static property of DetailsCard
+ 
 DetailsCard.Row = Row;
 
 export default DetailsCard;

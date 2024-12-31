@@ -1,7 +1,7 @@
 import DescriptionIcon from "@mui/icons-material/Description";
 import GridViewIcon from "@mui/icons-material/GridView";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
-import logo from "../assets/logo.png";
+import logo from "./../assets/react.svg";
 import { List, ListItem, ListItemButton, ListItemIcon } from "@mui/material";
 
 const Sidebar = () => {

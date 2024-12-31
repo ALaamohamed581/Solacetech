@@ -1,10 +1,11 @@
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import hero from "../assets/hero.png";
 import Divider from "@mui/material/Divider";
+import { NavLink } from "react-router-dom";
 const PersonalCard = () => {
   return (
     <>
-      <div className="flex-col shadow-lg p-4 rounded-[19px] w-[24.375rem] h-[29rem] felx">
+      <div className="flex-col shadow-lg p-4 rounded-[19px] w-[24.375rem] h-[23rem] felx">
         <div className="relative p-4 object-contain">
           <img
             className="rounded-[39px] w-[120px] h-[120px] object-fit"
@@ -24,9 +25,14 @@ const PersonalCard = () => {
           </div>
           <Divider sx={{ height: "15px" }} />
           <div className="bg-[#F4F8FE] mt-4 h-8 text-[#0F6CBD] text-md">
-            Personal Information
+            <NavLink to="/"> Personal Information</NavLink>
           </div>{" "}
-          <div className="mt-4 h-8 text-md">Financial Information</div>{" "}
+          <div className="mt-4 h-8 text-md">
+            <NavLink to="/financial-information">
+              {" "}
+              Financial Information
+            </NavLink>
+          </div>{" "}
         </div>
       </div>
     </>
