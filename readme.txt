@@ -5,6 +5,7 @@
 To run this app:
 ```bash
 cd frontend
+npm i 
 npm run dev
 ```
 
@@ -13,6 +14,7 @@ To run this app:
 ```bash
 cd ..
 cd backend
+npm i 
 npm run start:dev
 ```
 
