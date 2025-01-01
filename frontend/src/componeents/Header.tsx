@@ -1,6 +1,7 @@
 import NotificationsSharpIcon from "@mui/icons-material/NotificationsSharp";
-import LocalPostOfficeSharpIcon from "@mui/icons-material/LocalPostOfficeSharp";
+import MailIcon from "@mui/icons-material/Mail";
 import SettingsSharpIcon from "@mui/icons-material/SettingsSharp";
+
 import hero from "../assets/hero.png";
 import { useEffect, useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -17,45 +18,51 @@ const Header = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
   return (
-    <div className="flex justify-between w-[100%]">
+    <div className="flex justify-between items-center p-4 w-[100%]">
       <div>
-        {" "}
-        <h1 className="text-[#151D48] text-2xl">John doe</h1>
+        <h1 className="font-bold text-[#151D48] text-2xl">John Doe</h1>
         <span className="text-[#959FB0] text-xs">Profile</span> {">"}
-        <span className="text-[#959FB0] text-xs"> HR manage</span>
+        <span className="text-[#959FB0] text-xs"> HR Manager</span>
         {">"}
         <span className="text-[#959FB0] text-xs"> Employees</span>
         {">"}
-        <span className="text-[#003FAD] text-xs"> John Smith </span>
+        <span className="text-[#003FAD] text-xs"> John Smith</span>
       </div>
+
       {meun ? (
-        <MenuIcon className="flex justify-between items-center gap-6" />
+        <MenuIcon className="cursor-pointer" sx={{ fontSize: "32px" }} />
       ) : (
         <div className="flex justify-between items-center gap-6">
-          {" "}
-          <div>
+          <div className="relative">
             <NotificationsSharpIcon
-              sx={{ fill: "none", stroke: "#151D48", fontSize: "24px" }}
+              sx={{ fill: "none", stroke: "#151D48", fontSize: "28px" }}
+            />
+            <span className="top-0 right-0 absolute border-white bg-red-500 border rounded-full w-3 h-3"></span>
+          </div>
+
+          <div>
+            <MailIcon
+              sx={{ fill: "none", stroke: "#151D48", fontSize: "28px" }}
             />
           </div>
+
           <div>
-            <LocalPostOfficeSharpIcon
-              sx={{ fill: "none", stroke: "#151D48" }}
+            <SettingsSharpIcon
+              sx={{ fill: "none", stroke: "#151D48", fontSize: "28px" }}
             />
           </div>
-          <div>
-            <SettingsSharpIcon sx={{ fill: "none", stroke: "#151D48" }} />
-          </div>
-          <div className="bg-slate-400 rounded-2xl">
+
+          <div className="bg-gray-300 rounded-full w-10 h-10 overflow-hidden">
             <img
-              className="rounded-2xl w-10 h-10 object-fill"
-              alt="Notification icon"
+              className="w-full h-full object-cover"
+              alt="Profile"
               src={hero}
             />
           </div>
         </div>
-      )}{" "}
+      )}
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import { Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 interface Property {
   name: string;
@@ -20,12 +21,15 @@ const Row = ({ properties }: { properties: Property[] }) => (
 );
 
 const DetailsCard = ({ title, children }: CardProps) => {
+  const navigate = useNavigate();
   return (
-    <div className="md:flex-col shadow-[#EEEEEE80] shadow-md p-12 rounded-3xl w-full min-h-[196px] max-h-fit text-wrap">
-      <div className="min-w-[250px]">
-        <div className="flex justify-between items-center">
+    <div className="md:flex-col shadow-xl p-12 rounded-3xl md:min-w-[50rem] min-h-[196px] max-h-fit text-wrap">
+      <div>
+        <div className="flex justify-evenly md:justify-between items-center">
           <h4>{title}</h4>
           <Button
+            disabled={title !== "Basic Information"}
+            onClick={() => navigate(`/edit/1/${title.replace(/\s+/g, "-")}`)}
             style={{
               backgroundColor: "#0F6CBD",
               color: "white",
@@ -43,7 +47,6 @@ const DetailsCard = ({ title, children }: CardProps) => {
   );
 };
 
- 
 DetailsCard.Row = Row;
 
 export default DetailsCard;

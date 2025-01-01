@@ -3,8 +3,7 @@ import Layout from "../componeents/Layout";
 import Profile from "../pages/proflie";
 import Finintal from "../componeents/Finintal";
 import PerosnalData from "../componeents/PerosnalData";
-import { Component } from "react";
-import UserForm from "../forms/UserForm";
+import Form from "../forms/Form";
 
 const Router = () => {
   const routes = [
@@ -13,8 +12,8 @@ const Router = () => {
       element: <Layout />,
       children: [
         {
-          path: "/edit/:id",
-          element: <UserForm />,
+          path: "/edit/:id/:title",
+          element: <Form />,
         },
         {
           path: "/",

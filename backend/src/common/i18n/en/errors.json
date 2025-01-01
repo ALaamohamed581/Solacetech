@@ -1,0 +1,6 @@
+{
+  "password": "Wrong password, please enter the correct one",
+  "emailNotFound": "This email doesn't exist",
+  "emailPassword": "Wrong email or password",
+  "duplicateEmail": "This email already exists"
+}
